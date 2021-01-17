@@ -9,12 +9,12 @@
      font-size: 16px;
      color: #ecf0f1;
      text-decoration: none;
+     position: fixed;
    }
 
    header .showcase {
      background: url("img/fullscreen.jpg") center center/cover;
      height: 91.5vh;
-     width: contain;
 
 }
 
