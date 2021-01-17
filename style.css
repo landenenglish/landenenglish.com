@@ -9,7 +9,8 @@
      font-size: 16px;
      color: #ecf0f1;
      text-decoration: none;
-     overflow: hidden;
+     overflow-y: hidden;
+     
    }
 
    header .showcase {
@@ -44,8 +45,10 @@ header .container {
 
 .navLinks li {
      display: inline-block;
-     padding: 0px 40px;
+     padding: 0px 10px
 }
+
+   
 
 .navLinks li a {
      transition: all 0.3s ease 0s;
