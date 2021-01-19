@@ -4,30 +4,36 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/utilities.css">
+     <link rel="stylesheet" href="css/style.css">
      <title>Landen English Fitness</title>
-     <link rel="stylesheet" href="style.css">
      <link rel="shortcut icon" type="image/png" href="img/fav.png"/>
 </head>
-<body>
-     <header>
-          <div class="container">
-          <img src="img/logo.png" alt="" class="logo">
+<body id="home">
+     <header class="hero">
+          <div class="navbar" id="navbar">
+               <div class="logo">
+                    <img class="logoImg" src="img/logo.png" alt="LE">
+                    <h1 class="logoTxt">
+                         <!-- English <span class="text-primary">Fitness</span> -->
+                         English Fitness
+                    </h1>
+               </div>
           <nav>
-               <ul class="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Coaching</a></li>
-                <li><a href="index.html">Transformations</a></li>
+               <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coaching">Coaching</a></li>
+                    <li><a href="#transformations">Transformations</a></li>
                </ul>
           </nav>
-          <a class="cta" href="index.html"><button>Contact</button></a>
+               <a class="ct" href="#contact"><button>Contact</button></a>
           </div>
-          <div class="showcase">
-               <h1>Landen English Fitness</h1>
-               <p> Physique Athlete | Fitness Coach </p>
-          </div>
+     <div class="content">
+          <h1>Landen English Fitness</h1>
+          <p> Physique Athlete | Fitness Coach </p>
+          <a href="#coaching" class="btn">Read More</a>
+     </div>
 
      </header>
-
-     </div>
 </body>
 </html>
