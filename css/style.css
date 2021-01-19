@@ -86,7 +86,6 @@ button:hover {
      position: relative;
      color: #fff;
 }
-
 .hero .content {
      display: flex;
      flex-direction: column;
@@ -97,15 +96,15 @@ button:hover {
      padding: 0 20px;
      
 }
-
 .hero .content h1 {
-     font-weight: 700;
-     font-size: 35px;
+     font-weight: 400;
+     font-size: 55px;
      margin-bottom: 10px;
 }
-
 .hero .content p {
-     font-size: 20px;
+     font-size: 23px;
      background-color: rgba(0,91,150, 0.5);
      padding: 10px;
+     max-width: 600px;
+     margin: 20px 0 30px;
 }
