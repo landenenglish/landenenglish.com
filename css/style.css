@@ -121,6 +121,13 @@ img {
      margin-bottom: 15px;
 }
 
+.icons i {
+     background-color: #03396c;
+     color: #fff;
+     padding: 1rem;
+     border-radius: 20%;
+     margin-bottom: 15px;
+}
 
 
 /* Mobile */
@@ -163,5 +170,18 @@ img {
           max-width: 600px;
           margin: 5px 0 30px;
      }
+
+     .flex-items {
+          flex-direction: column;
+      }
+  
+      .flex-columns .column, .flex-grid .column {
+          flex: 100%;
+          max-width: 100%;
+      }
+  
+      .team img {
+          width: 70%;
+      }
       
 }
