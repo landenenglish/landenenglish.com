@@ -65,8 +65,8 @@ img {
      font-size: 16px;
      font-weight: 500;
 }
-.navBtn:hover {
-     background-color: rgba(0,91,150,0.7);
+.navBtn button:hover {
+     background-color: #6497b1;
 }
 .navbar ul {
      display: flex;
@@ -76,9 +76,10 @@ img {
      padding: 10px 20px;
      margin: 0, 5px;
 }
-.navbar ul a:hover {
+.navbar .navList:hover {
      border-bottom:#6497b1 2px solid;
 }
+
 
 /* Header */
 .hero {
