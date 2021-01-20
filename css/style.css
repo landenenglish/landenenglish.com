@@ -129,6 +129,9 @@ img {
      margin-bottom: 15px;
 }
 
+.transformations img:hover {
+     opacity: 0.7;
+}
 
 /* Mobile */
 @media(max-width: 768px) {
@@ -182,6 +185,11 @@ img {
   
       .team img {
           width: 70%;
+      }
+
+      .flex-columns .column, .flex-grid .column {
+          flex: 100%;
+          max-width: 100%;
       }
       
 }
