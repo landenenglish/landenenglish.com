@@ -133,6 +133,19 @@ img {
      opacity: 0.7;
 }
 
+/* Footer */
+.footer {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     height: 200px;
+}
+.footer a:hover {
+     color: #6497b1;
+}
+
 /* Background Fit */
 @media (min-width: 1244px) {
      .hero {
