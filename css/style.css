@@ -148,14 +148,14 @@ img {
      .navbar {
           flex-direction: column;
           height: 90px;
-          padding: 5px 0;
+          padding: 8px 0;
       }
       .navbar img {
-           height: 50px;
+           height: 40px;
       }
   
       .navbar a {
-          padding: 0px 3px;
+          padding: 0px 5px;
           margin: 0 3px;
       }
 
