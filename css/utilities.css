@@ -10,7 +10,12 @@
 }
 
 .bg-primary {
-     background: #6497b1;
+     background: #005b96;
+}
+
+.bg-secondary {
+     background: #3ebbe0;
+     
 }
 
 /* Flex Items */
@@ -28,6 +33,11 @@
 }
 
 /* Flex Columns */
+.flex-columns.flex-reverse .row {
+     flex-direction: row-reverse;
+}
+
+
 .flex-columns .row {
      display: flex;
      flex-direction: row;
