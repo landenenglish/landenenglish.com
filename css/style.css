@@ -217,13 +217,9 @@ img {
       }
   
       .flex-columns .column, .flex-grid .column {
-          flex: 100%;
-          max-width: 100%;
+          flex: 50%;
+          max-width: 50%;
       }
 
-      .flex-columns .column, .flex-grid .column {
-          flex: 100%;
-          max-width: 100%;
-      }
       
 }
