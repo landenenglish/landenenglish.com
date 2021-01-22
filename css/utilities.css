@@ -15,8 +15,38 @@
 
 .bg-secondary {
      background: #3ebbe0;
-     
 }
+
+.bg-secondary ul {
+     background-color: rgba(36,37,42,0.5);
+     list-style:square;
+     padding: 10px;
+     padding-left: 30px;
+     margin-top: 30px;
+     margin-left: 50px;
+}
+
+.bg-secondary li {
+     padding: 5px;
+}
+
+.contact ul{
+     list-style: square;
+     padding-left: 10px;
+     margin-top: 10px;
+     margin-left: 30px;
+     font-size: 20px;
+     margin-bottom: 30px;
+}
+
+.contact p {
+     font-size: 20px;
+}
+
+.contact a {
+     border-bottom:#6497b1 2px solid;
+}
+
 
 /* Flex Items */
 .flex-items {
@@ -29,7 +59,8 @@
 }
 
 .flex-items > div {
-     padding: 20px;
+     padding: 15px;
+     width: 33.33%;
 }
 
 /* Flex Columns */
