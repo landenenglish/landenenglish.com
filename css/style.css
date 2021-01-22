@@ -7,7 +7,14 @@
      margin: 0;
      
 }
+
+   html {
+     height: -webkit-fill-available;
+   }
+
 body {
+     min-height: 100vh;
+     min-height: -webkit-fill-available;
      font-family: 'Roboto', sans-serif;
      background-color: rgba(36,37,42,1);
      color: #fff;
