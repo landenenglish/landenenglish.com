@@ -8,13 +8,7 @@
      
 }
 
-   html {
-     height: -webkit-fill-available;
-   }
-
 body {
-     min-height: 100vh;
-     min-height: -webkit-fill-available;
      font-family: 'Roboto', sans-serif;
      background-color: rgba(36,37,42,1);
      color: #fff;
@@ -178,7 +172,7 @@ img {
       .navbar img {
            height: 45px;
       }
-  
+      
       .navbar a {
           padding: 0px 5px;
           margin: 0 3px;
@@ -187,6 +181,10 @@ img {
       .navBtn button {
           padding: 5px 12px;
       }
+
+     .hero {
+          height: 812px;
+     }
 
       .hero .content h1 {
           font-size: 40px;
