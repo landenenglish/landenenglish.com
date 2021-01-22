@@ -220,6 +220,10 @@ img {
           flex: 100%;
           max-width: 100%;
       }
+
+      .flex-grid .column{
+           flex: 50%;
+      }
       .flex-items > div {
           padding: 15px;
           width: 100%;
