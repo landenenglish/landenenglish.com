@@ -217,8 +217,8 @@ img {
       }
   
       .flex-columns .column, .flex-grid .column {
-          flex: 50%;
-          max-width: 50%;
+          flex: 100%;
+          max-width: 100%;
       }
 
       
