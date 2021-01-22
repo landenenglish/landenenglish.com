@@ -152,6 +152,11 @@ img {
      color: #6497b1;
 }
 
+.sqs-lightbox-overlay { 
+     background: #333 !important;
+     opacity: 0.7 !important;
+    }
+
 /* Background Fit */
 @media (min-width: 1244px) {
      .hero {
