@@ -43,8 +43,13 @@ img {
      position: fixed;
      top: 0px;
      padding: 0 30px;
-     transition: 0.5s;
+     transition: 0.3s ease-in;
 }
+
+.navbar.top {
+     background-color: rgba(36,37,42,0.4);
+}
+
 .navbar img {
      height: auto;
      width: auto;
@@ -204,10 +209,6 @@ img {
       .flex-columns .column, .flex-grid .column {
           flex: 100%;
           max-width: 100%;
-      }
-  
-      .team img {
-          width: 70%;
       }
 
       .flex-columns .column, .flex-grid .column {
