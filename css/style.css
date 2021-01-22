@@ -229,5 +229,13 @@ img {
           width: 100%;
      }
 
+     .bg-secondary ul {
+          background-color: rgba(36,37,42,0.5);
+          list-style:square;
+          padding: 10px;
+          padding-left: 30px;
+          margin-top: 30px;
+          margin-left: 10px;
+     }
       
 }
