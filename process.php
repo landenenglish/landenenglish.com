@@ -4,10 +4,12 @@
     //Email information
     $admin_email = "englishlanden@gmail.com";
     $name = $_POST['name'];
+    $email = $_POST['email'];
     $phone = $_POST['phone'];
+    $message = $_POST['message'];
     
     //send email
-    mail($admin_email, "Potential Client", $phone, "From:" . $email);
+    mail($admin_email, "New Form Submission", $message . ' - ' . $phone, "From:" . $email);
     
-    header('Location: http://landenenglish.com/success.html');
+    header('Location: https://landenenglish.com/success.html');
   }
