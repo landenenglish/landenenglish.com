@@ -1,5 +1,5 @@
 // Get User Input and Calculate BMR
-var form = document.getElementById("inputs");
+let form = document.getElementById("inputs");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
