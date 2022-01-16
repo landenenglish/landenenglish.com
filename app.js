@@ -1,5 +1,3 @@
-// global
-
 // slider event listner
 let slider = document.getElementById("range");
 slider.addEventListener("input", function () {
