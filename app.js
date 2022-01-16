@@ -1,22 +1,49 @@
+// global
+
+// slider event listner
+let slider = document.getElementById("range");
+slider.addEventListener("input", function () {
+  let sliderValue = slider.value;
+  let goal = radio("goal");
+  let goalMessageOne = "change";
+  let goalMessageTwo = "defecit/surplus";
+  let rate = 500;
+  let weeklyWeightChange = (rate * 7) / 3500;
+  rate = sliderValue * 100;
+  weeklyWeightChange = (rate * 7) / 3500;
+
+  if (goal == "gain") {
+    goalMessageOne = "gain";
+    goalMessageTwo = "surplus";
+  } else if (goal == "loss") {
+    goalMessageOne = "loss";
+    goalMessageTwo = "defecit";
+  }
+
+  let output = document.getElementById("sliderOutput");
+  output.innerHTML = `About ${weeklyWeightChange}lb of weight ${goalMessageOne} per week (${rate} calorie ${goalMessageTwo} per day).`;
+});
+
 // Get User Input and Calculate BMR
 let form = document.getElementById("inputs");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let firstName = document.getElementById("name").value;
   let sex = radio("sex");
   let kg = weight();
   let age = document.getElementById("age").value;
   let cm = height();
   let activity = radio("activity");
+  let goal = radio("goal");
+  let rate = document.getElementById("range").value * 100;
 
-  miffin(firstName, sex, kg, age, cm, activity);
+  miffin(sex, kg, age, cm, activity, goal, rate);
 
   window.scrollTo(0, document.body.scrollHeight);
 });
 
 //calculate BMR from inputs with Mifflin St Jeor Equation
-function miffin(firstName, sex, kg, age, cm, activity) {
+function miffin(sex, kg, age, cm, activity, goal, rate) {
   let BMR = 0;
   let factor = 0;
   let TDEE = 0;
@@ -48,24 +75,25 @@ function miffin(firstName, sex, kg, age, cm, activity) {
   BMR = Math.round(BMR);
   TDEE = BMR * factor;
   TDEE = Math.round(TDEE);
-  display(firstName, TDEE);
+  display(TDEE, goal, rate);
 }
 
 //display message
-function display(firstName, TDEE) {
+function display(TDEE, goal, rate) {
   let output1 = document.getElementById("output1");
   let output2 = document.getElementById("output2");
-  let output3 = document.getElementById("output3");
 
-  output1.innerHTML = `${firstName}'s Total Daily Energy Expendature (maintenance) is ${TDEE} calories.`;
+  output1.innerHTML = `Your total daily energy expendature is ${TDEE} calories (maintenance)`;
 
-  output2.innerHTML = `Eat ${TDEE - 300}-${
-    TDEE - 500
-  } calories to lose weight (300-500 deficit).`;
-
-  output3.innerHTML = `Eat ${TDEE + 300}-${
-    TDEE + 500
-  } calories to gain weight (300-500 surplus).`;
+  if (goal == "gain") {
+    output2.innerHTML = `Eat ${TDEE + rate} calories per day to gain about ${
+      (rate * 7) / 3500
+    }lbs per week.`;
+  } else if (goal == "loss") {
+    output2.innerHTML = `Eat ${TDEE - rate} calories per day to lose about ${
+      (rate * 7) / 3500
+    }lbs per week.`;
+  }
 }
 
 //conver lbs to kg

@@ -25,60 +25,63 @@
     
     <!-- Form for BMR Calculator -->
     <form id="inputs">
-      <!-- Name -->
-      <div class="row mb-3">
-        <label for="name" class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="name" autocapitalize="words" required>
-        </div>
-      </div>
 
       <!-- Sex -->
+      
       <fieldset class="row mb-3" id="sex">
-        <legend class="col-form-label col-sm-2 pt-0" required>Sex</legend>
+
         <div class="col-sm-10">
-          <div class="form-check">
+          <div class="form-check form-check-inline">
+            <legend></legend>
             <input class="form-check-input" type="radio" name="sex" id="male" value="male">
-            <label class="form-check-label" for="male"> Male </label>
+            <label class="form-check-label" for="male">Male</label>
           </div>
-          <div class="form-check">
+          <div class="form-check form-check-inline" >
             <input class="form-check-input" type="radio" name="sex" id="female" value="female">
-            <label class="form-check-label" for="female"> Female </label>
+            <label class="form-check-label" for="female">Female</label>
           </div>
         </div>
       </fieldset>
+      <hr>
 
       <!-- Weight -->
       <div class="row mb-3">
-        <label for="weight" class="col-sm-2 col-form-label">Weight</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="weight" placeholder="lbs" required>
+        <div class="col">
+        <div class="col-sm-10 form-floating">
+          <input type="number" class="form-control" id="weight" placeholder="Weight(lbs)" required>
+          <label for="weight">Weight(lbs)</label>
         </div>
       </div>
       
       <!-- Age -->
-      <div class="row mb-3">
-        <label for="age" class="col-sm-2 col-form-label">Age</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="age" placeholder="Years" required>
+      <div class="col">
+        <div class="col-sm-10 form-floating">
+          <input type="number" class="form-control" id="age" placeholder="Age(years)" required>
+          <label for="age">Age(years)</label>
         </div>
       </div>
+    </div>
+    <hr>
 
       <!-- Height -->
       <!-- Feet -->
       <div class="row mb-3">
-        <label for="feet" class="col-sm-2 col-form-label">Height</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="feet" placeholder="Feet" required>
+        <div class="col">
+        <div class="col-sm-10 form-floating">
+          <input type="number" class="form-control" id="feet" placeholder="Height(ft)" required>
+          <label for="feet">Height(feet)</label>
         </div>
       </div>
-      <!-- Inches -->
-      <div class="row mb-3">
-        <label for="inches" class="col-sm-2 col-form-label"></label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="inches" placeholder="Inches" required>
+      
+      <!-- inches -->
+      <div class="col">
+        <div class="col-sm-10 form-floating">
+          <input type="number" class="form-control" id="inches" placeholder="(in)" required>
+          <label for="feet">inches</label>
         </div>
       </div>
+    </div>
+    <hr>
 
       <!-- Activity Level -->
       <fieldset class="row mb-3" id="activity">
@@ -107,6 +110,40 @@
         </div>
       </fieldset>
 
+      <hr>
+
+      <!-- Goal -->
+      <fieldset class="row mb-3" id="sex">
+        <legend class="col-form-label col-sm-2 pt-0" required>Goal</legend>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="goal" id="male" value="loss">
+            <label class="form-check-label" for="loss"> Weight Loss </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="goal" id="female" value="gain">
+            <label class="form-check-label" for="gain"> Weight Gain </label>
+          </div>
+        </div>
+      </fieldset>
+
+
+      <!-- Rate -->
+
+        <div class="row mb-3">
+          <label for="range" class="col-sm-2 col-form-label">Rate</label>
+          <div class="col-sm-10">
+            <input type="range" class="form-range" min="0" max="10" step="1" id="range">
+          </div>
+        </div>
+
+
+      <label class="form-label" id="sliderOutput">About 1 lb of weight change per week</label>
+    
+
+      <br>
+      <br>
+
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -118,17 +155,12 @@
   
         <h4 id="output1" class="text-start"></h4>
         <br>
-      
         <h4 id="output2" class="text-start"></h4>
-        <br>
-        <h4 id="output3" class="text-start"></h4>
 
         <br>
         <br>
         <br>
-        <br>
       
-  
   
   <!-- JS -->
   <script src="app.js"></script>
