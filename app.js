@@ -21,7 +21,7 @@ slider.addEventListener("input", function () {
   }
 
   let output = document.getElementById("sliderOutput");
-  output.innerHTML = `About ${weeklyWeightChange}lb of weight ${goalMessageOne} per week (${rate} calorie ${goalMessageTwo} per day).`;
+  output.innerHTML = `${weeklyWeightChange}lb of weight ${goalMessageOne} per week (${rate} calorie ${goalMessageTwo} per day).`;
 });
 
 // Get User Input and Calculate BMR
