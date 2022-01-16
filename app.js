@@ -4,7 +4,7 @@ slider.addEventListener("input", function () {
   let sliderValue = slider.value;
   let goal = radio("goal");
   let goalMessageOne = "change";
-  let goalMessageTwo = "defecit/surplus";
+  let goalMessageTwo = "deficit/surplus";
   let rate = 500;
   let weeklyWeightChange = (rate * 7) / 3500;
   rate = sliderValue * 100;
@@ -15,7 +15,7 @@ slider.addEventListener("input", function () {
     goalMessageTwo = "surplus";
   } else if (goal == "loss") {
     goalMessageOne = "loss";
-    goalMessageTwo = "defecit";
+    goalMessageTwo = "deficit";
   }
 
   let output = document.getElementById("sliderOutput");
