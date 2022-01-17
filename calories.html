@@ -30,10 +30,9 @@
       <!-- Sex -->
       
       <fieldset class="row mb-3" id="sex">
-
+        <legend class="col-form-label col-sm-2 pt-0" required>Sex</legend>
         <div class="col-sm-10">
           <div class="form-check form-check-inline">
-            <legend></legend>
             <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
             <label class="form-check-label" for="male">Male</label>
           </div>
@@ -139,6 +138,32 @@
             <input type="range" class="form-range" min="0" max="10" step="1" id="range">
           </div>
         </div>
+      <hr>
+
+      <!-- percentage of calories from protein, carbs, and fats with default of 33% for each -->
+      <div class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0" required>Macro(%)</legend>
+        <div class="col">
+          <div class="col-sm-10 form-floating">
+            <input type="number" class="form-control" id="protein" placeholder="Protein(%)" value="30" required>
+            <label for="protein">Protein(%)</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-sm-10 form-floating">
+            <input type="number" class="form-control" id="carbs" placeholder="Carbs(%)" value="40" required>
+            <label for="carbs">Carbs(%)</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-sm-10 form-floating">
+            <input type="number" class="form-control" id="fats" placeholder="Fats(%)" value="30" required>
+            <label for="fats">Fats(%)</label>
+          </div>
+        </div>
+      </div>
+
+      <hr>
 
 
 
@@ -156,7 +181,9 @@
   
         <h5 id="output1" class="text-start"></h5>
         <br>
-        <h4 id="output2" class="text-start"></h4>
+        <h5 id="output2" class="text-start"></h5>
+        <br>
+        <h5 id="output3" class="text-start"></h5>
 
         <br>
         <br>

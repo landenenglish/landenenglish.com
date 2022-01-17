@@ -35,16 +35,28 @@ form.addEventListener("submit", function (event) {
   let activity = radio("activity");
   let goal = radio("goal");
   let rate = document.getElementById("range").value * 100;
+  let protein = parseInt(document.getElementById("protein").value);
+  let carbs = parseInt(document.getElementById("carbs").value);
+  let fats = parseInt(document.getElementById("fats").value);
 
-  mifflin(sex, kg, age, cm, activity, goal, rate);
-  window.scrollTo(0, document.body.scrollHeight);
+  // alert if protein, carbs, and fats do not equal 100
+  if (protein + carbs + fats != 100) {
+    window.alert("Protein, carbs, and fats must add up to 100%");
+  } else {
+    //calculate
+    mifflin(sex, kg, age, cm, activity, goal, rate, protein, carbs, fats);
+    window.scrollTo(0, document.body.scrollHeight);
+  }
 });
 
 //calculate BMR from inputs with Mifflin St Jeor Equation
-function mifflin(sex, kg, age, cm, activity, goal, rate) {
+function mifflin(sex, kg, age, cm, activity, goal, rate, protein, carbs, fats) {
   let BMR = 0;
   let factor = 0;
   let TDEE = 0;
+  protein = protein * 0.01;
+  carbs = carbs * 0.01;
+  fats = fats * 0.01;
 
   if (sex == "male") {
     BMR = 10 * kg + 6.25 * cm - 5 * age + 5;
@@ -70,28 +82,44 @@ function mifflin(sex, kg, age, cm, activity, goal, rate) {
       break;
   }
 
-  BMR = Math.round(BMR);
+  // total daily energy expendature equals BMR * activity factor
   TDEE = BMR * factor;
+  // round
   TDEE = Math.round(TDEE);
-
-  display(TDEE, goal, rate);
+  // display
+  display(TDEE, goal, rate, protein, carbs, fats);
 }
 
 //display message
-function display(TDEE, goal, rate) {
+function display(TDEE, goal, rate, protein, carbs, fats) {
   let output1 = document.getElementById("output1");
   let output2 = document.getElementById("output2");
+  let output3 = document.getElementById("output3");
 
   output1.innerHTML = `Your total daily energy expendature is ${TDEE} calories (maintenance).`;
 
   if (goal == "gain") {
-    output2.innerHTML = `Eat ${TDEE + rate} calories per day to gain about ${
+    let gainRate = TDEE + rate;
+
+    protein = Math.round((gainRate * protein) / 4);
+    carbs = Math.round((gainRate * carbs) / 4);
+    fats = Math.round((gainRate * fats) / 9);
+
+    output2.innerHTML = `Eat ${gainRate} calories per day to gain about ${
       (rate * 7) / 3500
     }lbs per week.`;
+    output3.innerHTML = `Macros: ${protein}g protein, ${carbs}g carbs, ${fats}g fats.`;
   } else {
-    output2.innerHTML = `Eat ${TDEE - rate} calories per day to lose about ${
+    let lossRate = TDEE - rate;
+
+    protein = Math.round((lossRate * protein) / 4);
+    carbs = Math.round((lossRate * carbs) / 4);
+    fats = Math.round((lossRate * fats) / 9);
+
+    output2.innerHTML = `Eat ${lossRate} calories per day to lose about ${
       (rate * 7) / 3500
     }lbs per week.`;
+    output3.innerHTML = `Macros: ${protein}g protein, ${carbs}g carbs, ${fats}g fats.`;
   }
 }
 
