@@ -7,13 +7,14 @@ slider.addEventListener("input", function () {
   let goalMessageTwo = "deficit/surplus";
   let rate = 500;
   let weeklyWeightChange = (rate * 7) / 3500;
+
   rate = sliderValue * 100;
   weeklyWeightChange = (rate * 7) / 3500;
 
   if (goal == "gain") {
     goalMessageOne = "gain";
     goalMessageTwo = "surplus";
-  } else if (goal == "loss") {
+  } else {
     goalMessageOne = "loss";
     goalMessageTwo = "deficit";
   }
@@ -35,18 +36,17 @@ form.addEventListener("submit", function (event) {
   let goal = radio("goal");
   let rate = document.getElementById("range").value * 100;
 
-  miffin(sex, kg, age, cm, activity, goal, rate);
-
+  mifflin(sex, kg, age, cm, activity, goal, rate);
   window.scrollTo(0, document.body.scrollHeight);
 });
 
 //calculate BMR from inputs with Mifflin St Jeor Equation
-function miffin(sex, kg, age, cm, activity, goal, rate) {
+function mifflin(sex, kg, age, cm, activity, goal, rate) {
   let BMR = 0;
   let factor = 0;
   let TDEE = 0;
 
-  if ((sex = male)) {
+  if (sex == "male") {
     BMR = 10 * kg + 6.25 * cm - 5 * age + 5;
   } else {
     BMR = 10 * kg + 6.25 * cm - 5 * age - 161;
@@ -73,6 +73,7 @@ function miffin(sex, kg, age, cm, activity, goal, rate) {
   BMR = Math.round(BMR);
   TDEE = BMR * factor;
   TDEE = Math.round(TDEE);
+
   display(TDEE, goal, rate);
 }
 
@@ -81,13 +82,13 @@ function display(TDEE, goal, rate) {
   let output1 = document.getElementById("output1");
   let output2 = document.getElementById("output2");
 
-  output1.innerHTML = `Your total daily energy expendature is ${TDEE} calories (maintenance)`;
+  output1.innerHTML = `Your total daily energy expendature is ${TDEE} calories (maintenance).`;
 
   if (goal == "gain") {
     output2.innerHTML = `Eat ${TDEE + rate} calories per day to gain about ${
       (rate * 7) / 3500
     }lbs per week.`;
-  } else if (goal == "loss") {
+  } else {
     output2.innerHTML = `Eat ${TDEE - rate} calories per day to lose about ${
       (rate * 7) / 3500
     }lbs per week.`;
@@ -101,14 +102,13 @@ function weight() {
   return kg;
 }
 
-//calculate total inches
 function height() {
+  //calculate total inches
   let feet = parseInt(document.getElementById("feet").value);
   let inches = parseInt(document.getElementById("inches").value);
   let totalInches = feet * 12 + inches;
   //convert to cm
   let totalCm = totalInches * 2.54;
-  // round to 2 decimal places
   return totalCm;
 }
 
