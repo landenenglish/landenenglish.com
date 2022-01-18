@@ -14,7 +14,7 @@ slider.addEventListener("input", function () {
   if (goal == "gain") {
     goalMessageOne = "gain";
     goalMessageTwo = "surplus";
-  } else {
+  } else if (goal == "loss") {
     goalMessageOne = "loss";
     goalMessageTwo = "deficit";
   }
