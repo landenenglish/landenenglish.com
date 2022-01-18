@@ -45,6 +45,7 @@ form.addEventListener("submit", function (event) {
   } else {
     //calculate
     mifflin(sex, kg, age, cm, activity, goal, rate, protein, carbs, fats);
+    // scroll to bottom of page
     window.scrollTo(0, document.body.scrollHeight);
   }
 });
